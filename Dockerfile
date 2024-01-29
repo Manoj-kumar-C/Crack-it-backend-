@@ -13,6 +13,6 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["npm", "install"]
+CMD ["npm", "start"]
 
 
