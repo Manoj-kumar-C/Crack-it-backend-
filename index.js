@@ -4,7 +4,7 @@ const express = require("express")
 const app = express()
 
 
-const farts = require('./fart.json')
+const farts = require('./apis/fart.json')
 
 const songs = [
     { id: 1, title: 'Song 1', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/1.mp3' },
