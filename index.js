@@ -59,6 +59,7 @@ app.get('/popular', (req, res)=>{
 
 app.get('/farts', (req,res)=>{
   res.json(farts);
+  console.log("Viral Works  Fine");
 })
 
 
