@@ -2,7 +2,8 @@
 const express = require("express")
 
 const app = express()
-
+const cors = require('cors');
+app.use(cors());
 
 const farts = require('./apis/fart.json')
 
