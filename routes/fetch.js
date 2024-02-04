@@ -1,3 +1,7 @@
+const express = require('express')
+
+const app = express();
+
 const fetch = require('node-fetch');
 
 const apiUrl = 'http://localhost:3000'; // Replace with your actual API URL
@@ -22,7 +26,7 @@ fetch(`${apiUrl}/login`, {
         const token = data.token;
 
         // Replace with your actual data fetch endpoint
-        fetch(`${apiUrl}/data`, {
+        fetch(`${apiUrl}/farts`, {
             method: 'GET',
             headers: {
                 'Authorization': token,
