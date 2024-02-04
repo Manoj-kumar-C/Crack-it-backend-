@@ -6,6 +6,8 @@ const app = express()
 
 const farts = require('./apis/fart.json')
 
+const viral = require('./apis/viral.json')
+
 const songs = [
     { id: 1, title: 'Song 1', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/1.mp3' },
     { id: 2, title: 'NO god plz no', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/10.mp3' },
@@ -57,6 +59,11 @@ app.get('/popular', (req, res)=>{
 
 app.get('/farts', (req,res)=>{
   res.json(farts);
+})
+
+
+app.get('/viral', (req,res)=>{
+  res.json(viral);
 })
 
 app.listen(3000, ()=> {console.log("Works at 3000")})
