@@ -4,47 +4,24 @@ const express = require("express")
 const app = express()
 const cors = require('cors');
 app.use(cors());
-
+// Apis JSONS imports 
 const farts = require('./apis/fart.json')
 
 const viral = require('./apis/viral.json')
 
-const songs = [
-    { id: 1, title: 'Song 1', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/1.mp3' },
-    { id: 2, title: 'NO god plz no', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/10.mp3' },
-    { id: 3, title: 'Song 3', audioFile: 'song3.mp3' },
-    { id: 4, title: 'Song 4', audioFile: 'song4.mp3' },
-    { id: 5, title: 'Test File', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/10.mp3' },
-  ];
+const popular1 = require('./apis/popular(1).json')
 
+const popular2 = require('./apis/popular(2).json')
 
-
-
-const animals = [
-  {
-    "id": 1,
-    "title": "Song 1",
-    "audioFile": "https://github.com/fresh-spar-technologies/Cracked-It/releases/download/0.1/1.Bats.mp3"
-  },
-  {
-    "id": 2,
-    "title": "Song 2",
-    "audioFile": "https://github.com/fresh-spar-technologies/Cracked-It/releases/download/0.1/2.Coyote.mp3"
-  },
-
-]
-
-
-  const popular = [
-    { id: 1, title: 'Song 1', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/1.mp3' },
-    { id: 2, title: 'NO god plz no', audioFile: 'https://github.com/Manoj-kumar-C/Storage-of-Meme-App/releases/download/0.1/10.mp3' },
-    { id: 3, title: 'Song 3', audioFile: 'song3.mp3' },
-    { id: 4, title: 'Song 4', audioFile: 'song4.mp3' },
-  ];
-
+const cartoon = require('./apis/cartoon.json')
 app.get('/', (req, res)=>{ 
-    res.json(songs);
+    res.json(farts);
     console.log("Works Fine")
+})
+
+app.get('/popular1', (req, res)=>{ 
+  res.json(popular1);
+  console.log("Works Fine")
 })
 
 app.get('/animals', (req, res)=>{ 
@@ -52,8 +29,8 @@ app.get('/animals', (req, res)=>{
   console.log(" Animal Works Fine")
 })
 
-app.get('/popular', (req, res)=>{ 
-  res.json(popular);
+app.get('/popular2', (req, res)=>{ 
+  res.json(popular2);
   console.log("Popular Works Fine")
 })
 
@@ -66,6 +43,12 @@ app.get('/farts', (req,res)=>{
 
 app.get('/viral', (req,res)=>{
   res.json(viral);
+})
+
+
+app.get('/cartoon', (req, res)=>{ 
+  res.json(cartoon);
+  console.log("Works Fine")
 })
 
 app.listen(3000, ()=> {console.log("Works at 3000")})
